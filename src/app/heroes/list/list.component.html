@@ -1,6 +1,16 @@
 <h5>Listado</h5>
-<ul>
-  <li *ngFor="let heroe of heroes">
-    {{heroe.name}} - {{heroe.power}}
-  </li>
-</ul>
+<div class="row">
+  <div *ngFor="let heroe of heroes" class="card col-md-4">
+    <div class="card-header"> {{heroe.name}}</div>
+    <div class="card-body" >
+      <small>{{heroe.power}}</small>
+      <p>{{heroe.habilities || ""}}</p>
+      <!-- boton q actualiza y elimina -->
+      <div class="row">
+        <button class="btn btn-danger mb-3">Eliminar <i class="fi fi-rr-trash"></i> </button>
+        <button class="btn btn-primary">Actualizar <i class="fi fi-br-feather"></i> </button>
+      </div>
+
+    </div>
+  </div>
+</div>
