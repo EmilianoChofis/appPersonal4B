@@ -1,0 +1,20 @@
+<h4>Agregar heore</h4>
+<form action="POST" #heroeForm="ngForm" class="was-validated" novalidate (submit)="saveHeroe()">
+  <div class="form-group form-row mb-3">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name="name" id="name" [(ngModel)]="heroe.name" #name="ngModel" [required]="true">
+    <div *ngIf="name.invalid"><small class="text-danger">Obligatorio</small></div>
+
+    <label for="power">power</label>
+    <input type="number" class="form-control" name="power" id="power" [(ngModel)]="heroe.power" #power="ngModel" [required]="true">
+    <div *ngIf="power.invalid"><small class="text-danger">Obligatorio</small></div>
+
+    <label for="habilities">Habilities</label>
+    <input type="text" class="form-control" name="habilities" id="habilities" [(ngModel)]="heroe.habilities">
+  </div>
+  <div class="form-row mb-3">
+    <div class="col text-end">
+      <button type="submit" class="btn btn-outline-success btn-sm" [disabled]="heroeForm.invalid">Registrar heroe</button>
+    </div>
+  </div>
+</form>
